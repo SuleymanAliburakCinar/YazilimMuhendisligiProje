@@ -1,0 +1,94 @@
+INSERT INTO sistem_yoneticileri values('Süleyman','Çınar','11111111111','scinar','123456');
+INSERT INTO sistem_yoneticileri values('Ali Asaf','Polat','22222222222','apolat','123456');
+INSERT INTO sistem_yoneticileri values('Cihan','Kaya','33333333333','ckaya','123456');
+INSERT INTO sistem_yoneticileri values('Furkan','Şahin','44444444444','fsahin','123456');
+INSERT INTO sistem_yoneticileri values('Büşra','Küden','55555555555','bkuden','123456');
+
+INSERT INTO kayit_elemanlari values('Ezgi','Çakır','12345678910','ecakir','123456');
+INSERT INTO kayit_elemanlari values('Tuana','Takı','11122233344','ttaki','123456');
+INSERT INTO kayit_elemanlari values('Mehmet','Kaya','12312312312','mkaya','123456');
+INSERT INTO kayit_elemanlari values('Tekin','Kartal','12121212121','tkartal','123456');
+INSERT INTO kayit_elemanlari values('Azra','Başel','12341234123','abasel','123456');
+
+INSERT INTO ogretmen values('Melek','Tekel','1478523699','05531233233',TO_DATE('2007/05/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ogretmen values('Eser','Çita','14774114788','05515466996',TO_DATE('2009/08/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ogretmen values('Arda','Tok','25885225887','05353699988',TO_DATE('2012/05/09 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ogretmen values('Demir','Reyhan','36996336966','05322322112',TO_DATE('2014/05/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ogretmen values('Zehra','Yeşil','54665445887','05369874565',TO_DATE('2001/06/22 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ogretmen values('Esin','Kesin','45665432112','05378546215',TO_DATE('2003/05/21 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+
+
+INSERT INTO sube values('İstanbul','Kadıköy','Kadıköy Mahallesi Kadıköy Bulvarı No:1','Kadıköy Otobüs Durağı Yanı',1,'Konusma Etkinlikleri, Geziler, Sinema Salonu');
+INSERT INTO sube values('İstanbul','Bakırköy','Bakırköy Mahallesi Bakırköy Bulvarı No:1','Bakırköy Otobüs Durağı Yanı',2,'Konusma Etkinlikleri, Geziler, Sinema Salonu');
+INSERT INTO sube values('İstanbul','Sefaköy','Sefaköy Mahallesi Sefaköy Bulvarı No:1','Sefaköy Otobüs Durağı Yanı',3,'Konusma Etkinlikleri, Geziler, Sinema Salonu');
+
+
+INSERT INTO sinif values(1,'A',1,20);
+INSERT INTO sinif values(1,'B',2,20);
+INSERT INTO sinif values(1,'C',3,20);
+INSERT INTO sinif values(1,'D',4,20);
+INSERT INTO sinif values(2,'A',1,20);
+INSERT INTO sinif values(2,'B',2,20);
+INSERT INTO sinif values(2,'C',3,20);
+INSERT INTO sinif values(2,'D',4,20);
+INSERT INTO sinif values(3,'A',1,20);
+INSERT INTO sinif values(3,'B',2,20);
+INSERT INTO sinif values(3,'C',3,20);
+INSERT INTO sinif values(3,'D',4,20);
+
+
+INSERT INTO kurs values(1,'Ing1','İngilizce',1,1,'A1',0,'1478523699');
+INSERT INTO kurs values(2,'Ing2','İngilizce',2,1,'A2',0,'1478523699');
+INSERT INTO kurs values(3,'Ing3','İngilizce',3,1,'B1',0,'14774114788');
+INSERT INTO kurs values(4,'Ing4','İngilizce',4,1,'B2',0,'14774114788');
+INSERT INTO kurs values(5,'Ing5','İngilizce',5,1,'C1',0,'25885225887');
+INSERT INTO kurs values(6,'Ing6','İngilizce',6,1,'C2',0,'25885225887');
+
+INSERT INTO kurs values(7,'Ing7','İngilizce',1,2,'A1',0,'1478523699');
+INSERT INTO kurs values(8,'Ing8','İngilizce',2,2,'A2',0,'1478523699');
+INSERT INTO kurs values(9,'Ing9','İngilizce',3,2,'B1',0,'14774114788');
+INSERT INTO kurs values(10,'Ing10','İngilizce',4,2,'B2',0,'14774114788');
+INSERT INTO kurs values(11,'Ing11','İngilizce',5,2,'C1',0,'25885225887');
+INSERT INTO kurs values(12,'Ing12','İngilizce',6,2,'C2',0,'25885225887');
+
+INSERT INTO kurs values(13,'Ing13','İngilizce',1,3,'A1',0,'1478523699');
+INSERT INTO kurs values(14,'Ing14','İngilizce',2,3,'A2',0,'1478523699');
+INSERT INTO kurs values(15,'Ing15','İngilizce',3,3,'B1',0,'14774114788');
+INSERT INTO kurs values(16,'Ing16','İngilizce',4,3,'B2',0,'14774114788');
+INSERT INTO kurs values(17,'Ing17','İngilizce',5,3,'C1',0,'25885225887');
+INSERT INTO kurs values(18,'Ing18','İngilizce',6,3,'C2',0,'25885225887');
+
+
+INSERT INTO kurs values(19,'Alm1','Almanca',1,1,'A1',0,'36996336966');
+INSERT INTO kurs values(20,'Alm2','Almanca',2,1,'A2',0,'36996336966');
+INSERT INTO kurs values(21,'Alm3','Almanca',3,1,'B1',0,'54665445887');
+INSERT INTO kurs values(22,'Alm4','Almanca',4,1,'B2',0,'54665445887');
+INSERT INTO kurs values(23,'Alm5','Almanca',5,1,'C1',0,'45665432112');
+INSERT INTO kurs values(24,'Alm6','Almanca',6,1,'C2',0,'45665432112');
+
+INSERT INTO kurs values(25,'Alm7','Almanca',1,2,'A1',0,'36996336966');
+INSERT INTO kurs values(26,'Alm8','Almanca',2,2,'A2',0,'36996336966');
+INSERT INTO kurs values(27,'Alm9','Almanca',3,2,'B1',0,'54665445887');
+INSERT INTO kurs values(28,'Alm10','Almanca',4,2,'B2',0,'54665445887');
+INSERT INTO kurs values(29,'Alm11','Almanca',5,2,'C1',0,'45665432112');
+INSERT INTO kurs values(30,'Alm12','Almanca',6,2,'C2',0,'45665432112');
+
+INSERT INTO kurs values(31,'Alm13','Almanca',1,3,'A1',0,'36996336966');
+INSERT INTO kurs values(32,'Alm14','Almanca',2,3,'A2',0,'36996336966');
+INSERT INTO kurs values(33,'Alm15','Almanca',3,3,'B1',0,'54665445887');
+INSERT INTO kurs values(34,'Alm16','Almanca',4,3,'B2',0,'54665445887');
+INSERT INTO kurs values(35,'Alm17','Almanca',5,3,'C1',0,'45665432112');
+INSERT INTO kurs values(36,'Alm18','Almanca',6,3,'C2',0,'45665432112');
+
+
+
+INSERT INTO kampanya values(1,'Ekonomik Kampanya-1',3500,'1,2,3','4');
+INSERT INTO kampanya values(2,'Ekonomik Kampanya-2',2500,'1,2','3');
+Insert into kampanya values(0,'Kampanya Seçilmedi',0,'0','0');
+
+
+
+
+
+
+

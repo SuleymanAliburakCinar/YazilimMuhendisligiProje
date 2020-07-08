@@ -1,0 +1,1 @@
+Programın çalışması için PostgreSQL de "DilKursu" adında bir veri tabanı oluşturulması ve şifresinin "1234" olması lazım

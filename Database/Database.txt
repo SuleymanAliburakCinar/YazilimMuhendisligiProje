@@ -1,0 +1,136 @@
+CREATE TABLE ogrenci (
+isim varchar(15) not null,
+soyisim varchar(15) not null,
+tc varchar(11) primary key,
+telno varchar(15) not null
+);
+
+CREATE TABLE kurs(
+    kursId int primary key,
+    kursAdi varchar(20),
+    kursDili varchar (15),
+    kursSinifi int,
+    kursSubesi int,
+    kurBilgisi varchar(3),
+    bulunanOgrenciSayisi int,
+    ogretmenId varchar(11)
+);
+
+CREATE TABLE ogrenci_odeme(
+    odemeId int primary key,
+    taksitSayisi int,
+    odenenTaksitSayisi int,
+    borcVar bool,
+    ogrencitc varchar(11),
+    toplamfiyat int,
+    birimtaksitfiyat int,
+    CONSTRAINT ogr_foreign FOREIGN KEY(ogrencitc) REFERENCES ogrenci(tc) ON DELETE CASCADE
+);
+
+CREATE TABLE kampanya(
+    kampanyaId int primary key,
+    kampanyaAdi varchar(20),
+    fiyat int,
+    alınankursidler varchar(20),
+    bedavaverilenkursid varchar(20),
+);
+
+CREATE TABLE ogrenci_kurs(
+    ogrencitc varchar(11),
+    kursId int,
+    odemeid int,
+    kampanyaid int,
+    durum boolean,
+    CONSTRAINT odemeid FOREIGN KEY(odemeid)REFERENCES ogrenci_odeme(odemeid) ON DELETE CASCADE,
+    CONSTRAINT kampanyaid FOREIGN KEY(kampanyaid) REFERENCES kampanya(kampanyaid) ON DELETE CASCADE,
+    CONSTRAINT ogr_kurs PRIMARY KEY(ogrencitc,kursId),
+    CONSTRAINT ogr_foreign FOREIGN KEY(ogrencitc) REFERENCES ogrenci(tc) ON DELETE CASCADE,
+    CONSTRAINT kurs_foreign FOREIGN KEY(kursId) REFERENCES kurs(kursId) ON DELETE CASCADE
+);
+
+
+
+CREATE TABLE ogretmen(
+    isim varchar(15),
+    soyisim varchar(15),
+    tc varchar(11) primary key,
+    telno varchar(15),
+    iseBaslamaTarihi date
+);
+
+CREATE TABLE ogretmen_dil(
+    ogretmentc varchar(11),
+    dil varchar(15),
+    CONSTRAINT ogr_dil PRIMARY KEY(ogretmentc,dil),
+    CONSTRAINT ogr_foreign FOREIGN KEY(ogretmentc) REFERENCES ogretmen(tc) ON DELETE CASCADE
+);
+
+CREATE TABLE Tarih(
+    tarihId int primary key,
+    gun varchar(10),
+    ogledenOnce bool
+);
+
+CREATE TABLE ogretmen_tarih(
+    ogretmentc varchar(11),
+    tarihId int,
+    CONSTRAINT ogr_tarih PRIMARY KEY(ogretmentc,tarihId),
+    CONSTRAINT ogr_foreign FOREIGN KEY(ogretmentc) REFERENCES ogretmen(tc) ON DELETE CASCADE,
+    CONSTRAINT tarih_foreign FOREIGN KEY(tarihId) REFERENCES tarih(tarihId) ON DELETE CASCADE    
+);
+
+CREATE TABLE sube(
+    il varchar(20),
+    ilce varchar(20),
+    adres varchar(50),
+    ulasimTalimatlari varchar(100),
+    subeId int primary key,
+    sosyalOlanaklar varchar(75)
+);
+
+CREATE TABLE ogretmen_sube(
+    ogretmentc varchar(11),
+    subeId int,
+    CONSTRAINT ogr_sube PRIMARY KEY(ogretmentc,subeId),
+    CONSTRAINT ogr_foreign FOREIGN KEY(ogretmentc) REFERENCES ogretmen(tc) ON DELETE CASCADE,
+    CONSTRAINT sube_foreign FOREIGN KEY(subeId) REFERENCES sube(subeId) ON DELETE CASCADE
+);
+
+CREATE TABLE sinif(
+    subeId int,
+    sinifAdi varchar(5),
+    sinifId int,
+    kapasite int,
+    CONSTRAINT sinif_sube PRIMARY KEY(subeId,sinifId),
+    CONSTRAINT subeId_foreign FOREIGN KEY(subeId) REFERENCES sube(subeId) ON DELETE CASCADE
+);
+
+CREATE TABLE kayit_elemanlari(
+    isim varchar(15),
+    soyisim varchar(15),
+    tc varchar(11) primary key,
+    kullaniciIsmi varchar(20),
+    sifre varchar(20)
+);
+
+CREATE TABLE sistem_yoneticileri(
+    isim varchar(15),
+    soyisim varchar(15),
+    tc varchar(11) primary key,
+    kullaniciIsmi varchar(20),
+    sifre varchar(20)
+);
+ 
+CREATE TABLE sinif_tarih(
+    sinifId int,
+    tarihId int,
+    subeId int,
+    CONSTRAINT snf_tarih PRIMARY KEY(sinifId,tarihId),
+    CONSTRAINT sube_snf_foreign FOREIGN KEY(subeId) REFERENCES sube(subeId) ON DELETE CASCADE,
+    CONSTRAINT sinif_foreign FOREIGN KEY(sinifId,subeId) REFERENCES sinif(sinifId,subeId) ON DELETE CASCADE,
+    CONSTRAINT tarih_foreign FOREIGN KEY(tarihId) REFERENCES tarih(tarihId) ON DELETE CASCADE
+);
+
+
+   
+    
